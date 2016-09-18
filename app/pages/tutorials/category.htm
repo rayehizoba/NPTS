@@ -1,0 +1,39 @@
+<h4 class="white-text">
+    <a ng-click="goBack()" class="back-btn blue-grey-text text-lighten-3">
+        <i class="fa fa-chevron-left"></i>
+    </a> {{categoryTitle}}
+</h4>
+
+<div scrollable class="animated fadeInUpSmall">
+    <div ng-hide="subcategories.length > 0" class="white-text center-align" style="opacity: .3;margin-top: 20%;">
+        <h1><i class="fa fa-film"></i></h1>
+        <h6>No videos available</h6>
+    </div>
+
+    <span class="blue-grey-text text-lighten-2 subtitle" ng-repeat-start="subcategory in subcategories">{{subcategory.title}}</span>
+    <hr>
+    <div class="row" ng-repeat-end>
+        <div class="col l8 m12 s24" ng-repeat="video in subcategory.videos">
+            <div class="card has-image hoverable" style="overflow: hidden;">
+                <a href="#/play_video/{{video.path}}" class="btn-play waves-effect waves-orange btn yellow"><i class="fa fa-play"></i></a>
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" ng-src="{{video.thumb}}">
+                </div>
+                <div class="card-content blue-grey lighten-3">
+                    <div class="row">
+                        <span class="card-title activator col s20 truncate white-text">{{video.title}}</span>
+                        <i tooltipped class="fa fa-eye yellow-text text-accent-1 col s2" data-position="bottom" data-tooltip="Watched"></i>
+                        <b class="card-title activator right white-text">&vellip;</b>
+                    </div>
+                </div>
+                <div class="card-reveal blue-grey" style="display: none; transform: translateY(0px);">
+                    <div class="row">
+                        <span class="card-title col s21 truncate white-text">{{video.title}}</span>
+                        <i class="card-title fa fa-times right white-text"></i>
+                    </div>
+                    <p class="white-text">{{video.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

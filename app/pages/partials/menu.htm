@@ -1,0 +1,56 @@
+<static-menu class="col s1 hide-on-med-and-down blue-grey darken-3" id="menu">
+    <ul>
+        <li class="center-align waves-effect waves-light animated bounceIn">
+            <a tooltipped class="yellow-text" ng-class="activeTab == 1 ? ' text-darken-1':' text-darken-4'"
+               data-position="right" data-delay="50" data-tooltip="Tutorials"
+               href="#/tutorials" ng-click="setActiveTab(1)">
+                <i class="fa fa-film"></i>
+            </a>
+        </li>
+        <li class="center-align waves-effect waves-light animated bounceIn">
+            <a tooltipped class="yellow-text" ng-class="activeTab == 2 ? ' text-darken-1':' text-darken-4'"
+               data-position="right" data-delay="50" data-tooltip="Run Programs"
+               href="#/run_programs" ng-click="setActiveTab(2)">
+                <i class="fa fa-terminal"></i>
+            </a>
+        </li>
+        <li class="center-align waves-effect waves-light animated bounceIn">
+            <a tooltipped class="yellow-text" ng-class="activeTab == 3 ? ' text-darken-1':' text-darken-4'"
+               data-position="right" data-delay="50" data-tooltip="Test Yourself"
+               href="#/tests" ng-click="setActiveTab(3)">
+                <i class="fa fa-puzzle-piece"></i>
+            </a>
+        </li>
+    </ul>
+</static-menu>
+<slide-out-menu class="hide-on-large-only">
+    <ul id="slide-out" class="side-nav">
+        <li>
+            <a href="#/tutorials" ng-click="setActiveTab(1)"
+               class="yellow-text waves-effect waves-yellow" ng-class="activeTab == 1 ? ' text-darken-1':' text-darken-4'"
+               onclick="$('.button-collapse').sideNav('hide');">
+            <i class="fa fa-film"></i><i class="fa fa-fw"></i>Tutorials</a>
+        </li>
+        <li>
+            <a href="#/run_programs" ng-click="setActiveTab(2)"
+               class="yellow-text waves-effect waves-yellow" ng-class="activeTab == 2 ? ' text-darken-1':' text-darken-4'"
+               onclick="$('.button-collapse').sideNav('hide');">
+            <i class="fa fa-terminal"></i><i class="fa fa-fw"></i>Run Programs</a>
+        </li>
+        <li>
+            <a href="#/tests" ng-click="setActiveTab(3)"
+               class="yellow-text waves-effect waves-yellow" ng-class="activeTab == 3 ? ' text-darken-1':' text-darken-4'"
+               onclick="$('.button-collapse').sideNav('hide');">
+            <i class="fa fa-puzzle-piece"></i><i class="fa fa-fw"></i>Test Yourself</a>
+        </li>
+    </ul>
+    <span id="show-menu">
+        <a href="#"
+           data-activates="slide-out"
+           class="btn-floating waves-effect waves-orange yellow accent-4"
+           data-sidenav="left"
+           data-closeonclick="false">
+            <i class="fa fa-bars"></i>
+        </a>
+    </span>
+</slide-out-menu>

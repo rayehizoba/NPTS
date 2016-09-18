@@ -1,0 +1,64 @@
+<div id="test">
+
+    <div id="preloader" class="center-align" ng-hide="pageLoaded">
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-yellow-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+    <h4 class="white-text">
+        <a ng-click="goBack()" class="back-btn blue-grey-text text-lighten-3">
+            <i class="fa fa-chevron-left"></i>
+        </a> {{ title }}
+    </h4>
+
+    <div id="controls" class="yellow-text" ng-hide="!test_started">
+        <i class="left fa fa-caret-left" ng-click="gotoPrev()" ng-hide="current_question == 0"></i>
+        <i class="right fa fa-caret-right" ng-click="gotoNext()" ng-hide="current_question == questions.length - 1"></i>
+    </div>
+
+    <div class="col s24 center-align animated" id="start_card" ng-class="{'fadeOutDown': test_started}">
+        <div class="card animated blue-grey white-text" ng-class="pageLoaded ? 'fadeIn' : 'hide'" ng-click="start()" style="cursor: pointer">
+            <div class="card-content">
+                <br><br><br>
+                <h5 class="grey-text text-lighten-1">START</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="col s24 animated" id="test-content" ng-repeat="question in questions" ng-class="{'fadeOutDown': !question.isFocused}">
+        <div class="card blue-grey animated" ng-class="{'fadeInUp': question.isFocused}" style="-webkit-animation-delay: .5s">
+            <div class="card-content white-text">
+                <span class="card-title">Question {{ $index + 1 }} of {{ questions.length }}.</span>
+                <div class="divider"></div>
+                <p ng-bind-html="question.question"></p>
+                <div class="options">
+                    <div class="chip hoverable" ng-click="selectOption($index, 'a')" ng-class="{'yellow lighten-3': question.selected_option == 'a'}">
+                        A. {{ question.options.a }}
+                    </div>
+                    <div class="chip hoverable" ng-click="selectOption($index, 'b')" ng-class="{'yellow lighten-3': question.selected_option == 'b'}">
+                        B. {{ question.options.b }}
+                    </div>
+                    <div class="chip hoverable" ng-click="selectOption($index, 'c')" ng-class="{'yellow lighten-3': question.selected_option == 'c'}">
+                        C. {{ question.options.c }}
+                    </div>
+                    <div class="chip hoverable" ng-click="selectOption($index, 'd')" ng-class="{'yellow lighten-3': question.selected_option == 'd'}">
+                        D. {{ question.options.d }}
+                    </div>
+                    <div class="chip hoverable" ng-click="selectOption($index, 'e')" ng-class="{'yellow lighten-3': question.selected_option == 'e'}">
+                        E. {{ question.options.e }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="logo row">
+    <div class="col l24 center-align yellow-text text-darken-2">
+        <i class="fa fa-film"></i>
+        <br>
+        <br>
+        <h5>Recent Tutorials</h5>
+        <hr>
+    </div>
+</div>
+<div class="row" ng-controller="TutorialsController">
+    <div class="col l24" ng-init="recent_tutorials=[
+        'Arrays in C',
+        'Pointer variables',
+        'Software development life cycle phases',
+        'Pascal functions and procedures',
+    ]">
+        <div ng-repeat="tutorial in recent_tutorials"
+             class="card-panel waves-effect waves-orange blue-grey darken-2 grey-text text-lighten-1 hoverable animated fadeInDown"
+             style="-webkit-animation-delay: .{{$index}}s">
+            <div class="row">
+                <div class="col l21">
+                    <span class="truncate">{{tutorial}}</span>
+                </div>
+                <div class="col l3">
+                    <i class="right fa fa-play yellow-text text-darken-2"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

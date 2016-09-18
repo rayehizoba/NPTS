@@ -1,0 +1,17 @@
+<div class="handle-bar"></div>
+<ul class="controls white-text center-align transparent-text">
+    <li id="btn-minimize" class="grey hoverable waves-effect waves-light" title="Minimize" ng-click="minimizeWindow()">
+        <b>&bullet;</b>
+    </li>
+    <li id="btn-restore" class="grey hoverable waves-effect waves-light" title="Restore Down"
+        ng-show="isFullscreen" ng-click="maximizeWindow()">
+        <i class="fa fa-minus"></i>
+    </li>
+    <li id="btn-restore" class="grey hoverable waves-effect waves-light" title="Maximize"
+        ng-hide="isFullscreen" ng-click="maximizeWindow()">
+        <i class="fa fa-plus"></i>
+    </li>
+    <li id="btn-close" class="red hoverable waves-effect waves-light" title="Close" ng-click="closeWindow()">
+        <i class="fa fa-times"></i>
+    </li>
+</ul>

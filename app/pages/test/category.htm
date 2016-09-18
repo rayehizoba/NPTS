@@ -1,0 +1,22 @@
+<h4 class="white-text">
+    <a ng-click="goBack()" class="back-btn blue-grey-text text-lighten-3">
+        <i class="fa fa-chevron-left"></i>
+    </a> {{categoryTitle}}
+</h4>
+<div class="animated fadeInUp">
+    <span class="blue-grey-text text-lighten-2 subtitle">Tests</span>
+    <hr>
+</div>
+<div scrollable class="row animated fadeInUpSmall" style="animation-delay: .1s">
+    <div ng-hide="tests.length > 0" class="center-align white-text" style="margin-top:20%; opacity:.3">
+        <h1><i class="fa fa-puzzle-piece"></i></h1>
+        <h6>No tests available</h6>
+    </div>
+    <div class="col l8 m12 s24" ng-repeat="test in tests" ng-click="gotoTest(test.questions)">
+        <div class="card hoverable grey darken-2 yellow-text darken-1 waves-effect">
+            <div class="card-content">
+                <span class="card-title">{{test.title}}</span>
+            </div>
+        </div>
+    </div>
+</div>

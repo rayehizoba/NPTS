@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "Programming in Pascal",
+    "dirname": "programming_in_pascal",
+    "tests": [
+      {
+        "title": "2006/2007",
+        "questions": "06-07.json"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Programming in C",
+    "dirname": "programming_in_c"
+  }
+]

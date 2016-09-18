@@ -1,0 +1,226 @@
+<!--// Toolbar -->
+<toolbar id="toolbar">
+    <div class="row">
+        <!--// back btn -->
+        <div class="col s1">
+            <a class="btn-flat" ng-click="goBack()"><i class="fa fa-chevron-left"></i></a>
+        </div>
+
+        <!--// Tabs -->
+        <div class="col m11 hide-on-small-only">
+            <ul class="tabs" ng-class="tabs.length > 0 ? '' : 'hide'" tabs>
+                <li ng-repeat="tab in tabs" class="tab col s3 truncate">
+                    <a id="tab{{$index}}" ng-click="onChangeTab($index)">
+                        {{tab.filename}}<i class="fa fa-times red-text right" ng-click="closeTab($index)"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!--// control btns -->
+        <div class="col s23 m12 right">
+            <nav>
+                <div class="nav-wrapper">
+                    <ul class="right">
+                        <li tooltipped data-position="bottom" data-delay="750" data-tooltip="New">
+                            <a href="#newTabModal" onclick="setTimeout(function(){$(document).find('#newTabInput').trigger('focus')},100)" modal>
+                                <i class="fa fa-plus"></i>
+                            </a>
+                        </li>
+                        <li tooltipped data-position="bottom" data-delay="750" data-tooltip="Open">
+                            <a onclick="$('#openFileDialog').click()"><i class="fa fa-folder-open-o"></i></a>
+                            <input class="hide" id="openFileDialog" type="file" nwworkingdir="{{defDir}}" accept="{{fileTypesFilter}}"/>
+                        </li>
+                        <li tooltipped data-position="bottom" data-delay="750" data-tooltip="Save" ng-click="saveFile()">
+                            <a><i class="fa fa-save"></i></a>
+                        </li>
+                        <li tooltipped data-position="bottom" data-delay="750" data-tooltip="Compile" ng-show="isCompiledLang" ng-click="compile()">
+                            <a><i class="fa fa-gears"></i></a>
+                        </li>
+                        <li tooltipped data-position="bottom" data-delay="750" data-tooltip="Run" ng-click="execute()">
+                            <a><i class="fa fa-play"></i></a>
+                        </li>
+                        <li>
+                            <a class='dropdown-button' data-activates='moreDropdown' dropdown><i class="fa fa-ellipsis-v"></i></a>
+                        </li>
+                        <li><i class="fa fa-fw grey-text text-lighten-1">  |  </i></li>
+                        <li tooltipped data-position="bottom" data-delay="750" data-tooltip="Settings">
+                            <a href="#settingsModal" modal>
+                                <i class="fa fa-gear"></i>
+                            </a>
+                        </li>
+                        <li><a class="waves-effect waves-light btn yellow darken-3 hide-on-med-and-down">Examples</a></li>
+                    </ul>
+                    <!--// more btn dropdown structure -->
+                    <ul id='moreDropdown' class='dropdown-content'>
+                        <li><a href="javascript:void(0);"><i class="fa fa-edit"></i><i class="fa fa-fw"></i>Rename</a></li>
+                        <li><a class="red-text" href="javascript:void(0);"><i class="fa fa-trash-o"></i><i class="fa fa-fw"></i>Delete</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</toolbar>
+
+<!--// Splitter -->
+<div splitter class="splitter-container">
+    <div>
+        <div ui-ace="{onLoad: aceLoaded}" ng-model="sourceText" class="hide"></div>
+        <div id="emptyIdeBanner" class="white-text row">
+            <div class="col s5 offset-s7">
+                Open a new tab <b class="yellow-text text-accent-4">Ctrl + T</b> or <b class="yellow-text text-accent-4">+</b>
+                <br><br>
+                Open a file <b class="yellow-text text-accent-4">Ctrl + O</b> or <i class="fa fa-folder-open-o yellow-text text-accent-4"></i>
+                <br><br>
+                Save a file <b class="yellow-text text-accent-4">Ctrl + S</b> or <i class="fa fa-save yellow-text text-accent-4"></i>
+            </div>
+            <div class="col s12">
+                <i class="fa fa-terminal"></i>
+            </div>
+        </div>
+    </div>
+    <console class="blue-grey darken-4"></console>
+</div>
+
+<!--// Status bar -->
+<div class="status-bar">
+    <span class="hide-on-med-and-down">
+        <i class="fa fa-fw"></i>
+        <i class="fa fa-fw"></i>
+        <i class="fa fa-fw"></i>
+    </span>
+    Line {{status.curPos.row}}, Column {{status.curPos.col}} <span class="grey-text text-darken-1">&horbar; {{status.lines}} Lines</span>
+    <b class="right">{{status.language}}</b>
+</div>
+<style>
+    console {
+        height: 100%;
+        width: 100%;
+        position:relative;
+        display: block;
+    }
+    /* The inner console element. */
+    .jqconsole {
+        padding: 10px;
+        overflow: hidden;
+    }
+    .jqconsole-header {
+        color: greenyellow;
+    }
+
+    /* The cursor. */
+    .jqconsole-cursor {
+        background-color: gray;
+        height: 3px;
+        margin-top: 15px;
+    }
+    /* The cursor color when the console looses focus. */
+    .jqconsole-blurred .jqconsole-cursor {
+        background-color: #555;
+    }
+    /* The current prompt text color */
+    .jqconsole-prompt {
+        color: lightgreen;
+    }
+
+    .jqconsole-blurred .jqconsole-prompt {
+        color: mediumseagreen;
+    }
+    /* The command history */
+    .jqconsole-old-prompt {
+        color: #efefef;
+        font-weight: normal;
+    }
+    /* The text color when in input mode. */
+    .jqconsole-input {
+        color: #dd0;
+    }
+    /* Previously entered input. */
+    .jqconsole-old-input {
+        color: #bb0;
+        font-weight: normal;
+    }
+    /* The text color of the output. */
+    .jqconsole-output {
+        color: lawngreen;
+    }
+
+    .ace_editor {
+        height: 100%;
+    }
+
+    .status-bar {
+        height: 4%;
+        background-color: #dedede;
+        padding: 6px 10px;
+        font-size: 13px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+</style>
+
+<!--// Modals -->
+    <!--// Settings Modal -->
+<div id="settingsModal" class="modal">
+    <div class="modal-content">
+        <h5>Settings</h5>
+        <br>
+        <div class="row">
+            <div class="input-field col s15">
+                <select ng-model="selectedTheme" ng-change="themeChanged()" material-select watch>
+                    <optgroup label="Light">
+                        <option value="dawn">Dawn</option>
+                        <option value="github">Github</option>
+                        <option value="iplastic" selected>iPlastic</option>
+                        <option value="solarized_light">Solarized Light</option>
+                    </optgroup>
+                    <optgroup label="Dark">
+                        <option value="ambiance">Ambiance</option>
+                        <option value="chaos">Chaos</option>
+                        <option value="monokai">Monokai</option>
+                        <option value="terminal">Terminal</option>
+                        <option value="tomorrow_night_blue">Tomorrow Night Blue</option>
+                    </optgroup>
+                </select>
+                <label>Theme</label>
+            </div>
+            <div class="input-field col s15">
+                <select ng-model="selectedFontsize" ng-change="fontsizeChanged()" material-select watch>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="16">16</option>
+                    <option value="18">18</option>
+                    <option value="20">20</option>
+                    <option value="24">24</option>
+                </select>
+                <label>Font Size</label>
+            </div>
+            <p class="col s15">
+                <input type="checkbox" id="usw" ng-model="useSoftWrap" ng-change="softWrapChanged()"/>
+                <label for="usw">Use soft wrap</label>
+            </p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a class=" modal-action modal-close waves-effect btn-flat">Done</a>
+    </div>
+</div>
+
+    <!--// New tab Modal -->
+<div id="newTabModal" class="modal">
+    <div class="modal-content">
+        <div class="row">
+            <div class="col s24">
+                <form ng-submit="newTab()">
+                    <input id="newTabInput" type="text" ng-model="newTabFilename" style="font-size: 1rem" placeholder="Filename">
+                    <button type="submit" class="hide"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

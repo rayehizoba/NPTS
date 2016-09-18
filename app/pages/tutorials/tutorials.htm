@@ -1,0 +1,14 @@
+<h4 class="white-text">Tutorials</h4>
+<div class="animated fadeInUp">
+    <span class="blue-grey-text text-lighten-2 subtitle">Categories</span>
+    <hr>
+</div>
+<div scrollable class="row animated fadeInUpSmall" style="-webkit-animation-delay: .1s">
+    <div class="col l8 m12 s24" ng-repeat="category in categories">
+        <div class="card hoverable grey darken-2 yellow-text darken-1 waves-effect" ng-click="gotoCategory(category.id)">
+            <div class="card-content">
+                <span class="card-title">{{category.title}}</span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,234 @@
+.subtitle {
+  font-size: 17px;
+  font-weight: 300;
+}
+
+#menu {
+  position: absolute;
+  height: 100%;
+  z-index: 10;
+
+  ul {
+    margin: 0 -10px;
+
+    li {
+      height: 70px;
+      width: 100%;
+
+      a {
+        display: block;
+
+        i {
+          font-size: 20px;
+          padding: 25px 0;
+        }
+      }
+    }
+  }
+}
+
+#show-menu {
+  border: solid #fff 42px;
+  border-radius: 50%;
+  position: fixed;
+  opacity: .2;
+  top: -80px;
+  left: -75px;
+  transition: all .3s ease-in-out;
+  z-index: 990;
+
+  &:hover {
+    top: -25px;
+    left: -30px;
+    border-color: transparent;
+    opacity: 1;
+  }
+}
+
+.sidebar {
+  .logo {
+    i.fa {
+      font-size: 150px;
+      margin-top: 50px;
+    }
+  }
+
+  .card-panel {
+    padding: 15px 10px;
+    line-height: 1;
+  }
+
+  .row {
+    margin-bottom: 0;
+  }
+
+  .waves-effect {
+    display: block;
+  }
+}
+
+.back-btn {
+  font-size: 25px;
+  padding: 0 5px;
+}
+
+.controls {
+  display: -webkit-inline-box;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: 7px;
+  z-index: 10000000;
+  -webkit-app-region: no-drag;
+
+  li {
+    margin: 5px;
+    border-radius: 50%;
+    height: 17px;
+    width: 17px;
+    font-size: 11px;
+    line-height: 1.9;
+    cursor: default;
+
+    &:hover {
+      color: #334!important;
+    }
+  }
+}
+
+.mCustomScrollbar {
+  height: 93%;
+  .mCustomScrollBox {
+    padding-bottom: 50px;
+  }
+}
+
+.handle-bar {
+  width: 96%;
+  height: 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-app-region: drag;
+  z-index: 1000;
+}
+
+.vjs-video-wrap {
+  height: 100%;
+  margin: 0 -11px;
+
+  .video-js {
+    width: 100%;
+    height: 92%;
+
+    .vjs-big-play-button {
+      font-size: 5em;
+      bottom: 20px;
+      right: 20px;
+      top: auto;
+      left: auto;
+      border-radius: 0;
+    }
+  }
+}
+
+#toolbar {
+  width: 100%;
+  position: relative;
+  display: block;
+  height: 60px;
+  background-color: #dedede;
+  padding-top: 25px;
+  top: 0;
+  left: 0;
+  z-index: 99;
+
+  .btn-flat {
+    padding: 0 10px;
+    height: 35px;
+  }
+}
+
+#emptyIdeBanner {
+  margin-top: 180px;
+  opacity: .2;
+  font-weight: 100;
+  font-size: 18px;
+  width: 100%;
+  position: fixed;
+
+  i.fa-terminal {
+    font-size: 250px;
+    line-height: 0.4;
+  }
+}
+
+#test {
+  height: 100%;
+
+  .card {
+    box-shadow: 0px 5px 25px rgba(0, 0, 0, .2);
+  }
+
+  #preloader {
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+    height: 100%;
+    background-color: #445;
+    padding-top: 30%;
+  }
+
+  #start_card {
+    height: 85%;
+    position: absolute;
+    z-index: 90;
+
+    .card {
+      padding: 20% 0;
+      height: 100%;
+    }
+  }
+
+  #controls {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    i.fa {
+      font-size: 50px;
+      position: absolute;
+      z-index: 9;
+      top: 40%;
+      opacity: .1;
+
+      &.right {
+        right: 0;
+      }
+
+      &:hover {
+        opacity: .3;
+      }
+    }
+  }
+
+  #test-content {
+    height: 100%;
+    position: absolute;
+
+    .card {
+      height: 85%;
+      padding: 30px;
+
+      .card-content p {
+        margin-top: 15px;
+      }
+
+      .options {
+        position: absolute;
+        bottom: 0;
+        padding: 45px 0;
+      }
+    }
+  }
+}

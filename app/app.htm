@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NPTS</title>
+    <!--// Materialize -->
+    <link rel="stylesheet" href="assets/css/materialize.min.css">
+
+    <!--// Font Awesome -->
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+
+    <!--// Animate -->
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <!--// Custom Scrollbar -->
+    <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+
+    <!--// Splitter -->
+    <link rel="stylesheet" href="assets/css/jquery.splitter.css">
+
+    <!--// VideoJS -->
+    <link rel="stylesheet" href="assets/css/video-js.min.css">
+</head>
+<body ng-app="NPTS">
+    <div class="row" id="window">
+        <!--// Menu -->
+        <div menu></div>
+
+        <!--// Controls -->
+        <handlebar-controls></handlebar-controls>
+
+        <!--// Content -->
+        <content-container class="col s24 l18 offset-l1 blue-grey darken-2" id="main-container">
+            <div ng-view style="height: 100%; position: relative;"></div>
+        </content-container>
+
+        <!--// Sidebar -->
+        <sidebar class="col s5 hide-on-med-and-down blue-grey darken-3 sidebar"/>
+    </div>
+
+    <!--// JavaScript Files -->
+
+    <!--// JQuery -->
+    <script type="text/javascript" src="assets/js/JQuery/jquery-2.1.4.min.js"></script>
+
+    <!--// AngularJS -->
+    <script type="text/javascript" src="assets/js/Angular/angular.min.js"></script>
+    <script type="text/javascript" src="assets/js/Angular/angular-route.min.js"></script>
+    <script type="text/javascript" src="assets/js/Angular/angular-sanitize.min.js"></script>
+
+    <!--// Materialize -->
+    <script type="text/javascript" src="assets/js/Materialize/bin/materialize.min.js"></script>
+    <script type="text/javascript" src="assets/js/Materialize/bin/angular-materialize.js"></script>
+
+    <!--// Custom Scrollbar -->
+    <script type="text/javascript" src="assets/js/Scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!--// Splitter -->
+    <script type="text/javascript" src="assets/js/JQuerySplitter/jquery.splitter.js"></script>
+
+    <!--// jqconsole -->
+    <script type="text/javascript" src="assets/js/jqconsole/jqconsole.min.js"></script>
+
+    <!--// VideoJS -->
+    <script type="text/javascript" src="assets/js/VideoJS/video.min.js"></script>
+    <script type="text/javascript" src="assets/js/VideoJS/vjs.directive.js"></script>
+
+    <!--// Ace Editor -->
+    <script type="text/javascript" src="assets/js/Ace/ace.js"></script>
+    <script type="text/javascript" src="assets/js/Ace/ui-ace.min.js"></script>
+
+    <!--// Components -->
+    <script type="text/javascript" src="assets/js/Components/Menu.component.js"></script>
+    <script type="text/javascript" src="assets/js/Components/Controls.component.js"></script>
+    <script type="text/javascript" src="assets/js/Components/Sidebar.component.js"></script>
+    <script type="text/javascript" src="assets/js/Components/Scrollable.component.js"></script>
+    <script type="text/javascript" src="assets/js/Components/Splitter.component.js"></script>
+    <script type="text/javascript" src="assets/js/Components/Console.component.js"></script>
+
+    <!--// Services -->
+    <script type="text/javascript" src="assets/js/Services/Tutorials.service.js"></script>
+    <script type="text/javascript" src="assets/js/Services/Tests.service.js"></script>
+    <script type="text/javascript" src="assets/js/Services/CCompiler.service.js"></script>
+    <script type="text/javascript" src="assets/js/Services/PascalCompiler.service.js"></script>
+    <script type="text/javascript" src="assets/js/Services/FortranCompiler.service.js"></script>
+    <script type="text/javascript" src="assets/js/Services/QBasicCompiler.service.js"></script>
+    <script type="text/javascript" src="assets/js/Services/JSInterpreter.service.js"></script>
+
+    <!--// Controllers -->
+    <script type="text/javascript" src="assets/js/Controllers/Tutorials.controller.js"></script>
+    <script type="text/javascript" src="assets/js/Controllers/TutorialCategory.controller.js"></script>
+    <script type="text/javascript" src="assets/js/Controllers/PlayVideo.controller.js"></script>
+    <script type="text/javascript" src="assets/js/Controllers/RunPrograms.controller.js"></script>
+    <script type="text/javascript" src="assets/js/Controllers/LanguageIde.controller.js"></script>
+    <script type="text/javascript" src="assets/js/Controllers/Tests.controller.js"></script>
+    <script type="text/javascript" src="assets/js/Controllers/TestCategory.controller.js"></script>
+    <script type="text/javascript" src="assets/js/Controllers/TestSession.controller.js"></script>
+
+    <!--// Main -->
+    <script type="text/javascript" src="assets/js/NPTS.app.js"></script>
+</body>
+</html>

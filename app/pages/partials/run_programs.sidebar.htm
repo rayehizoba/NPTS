@@ -1,0 +1,31 @@
+<div class="logo row">
+    <div class="col l24 center-align yellow-text text-darken-2">
+        <i class="fa fa-terminal"></i>
+        <br>
+        <br>
+        <h5>Recent Codes</h5>
+        <hr>
+    </div>
+</div>
+<div class="row" ng-controller="RunProgramsController">
+    <div class="col l24" ng-init="recent_programs=[
+        'test.pas',
+        'test.js',
+        'test.c',
+        'test.cpp',
+        'test.qb'
+    ]">
+        <div class="card-panel waves-effect waves-orange blue-grey darken-2 grey-text text-lighten-1 hoverable animated fadeInDown"
+             style="-webkit-animation-delay: .{{$index}}s"
+             ng-repeat="code in recent_programs">
+            <div class="row">
+                <div class="col l21">
+                    <span class="truncate">{{code}}</span>
+                </div>
+                <div class="col l3">
+                    <i class="right fa fa-edit yellow-text text-darken-2"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

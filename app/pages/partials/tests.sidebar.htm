@@ -1,0 +1,35 @@
+<div class="logo row">
+    <div class="col l24 center-align yellow-text text-darken-2">
+        <i class="fa fa-puzzle-piece"></i>
+        <br>
+        <br>
+        <h5>Recent Tests</h5>
+        <hr>
+    </div>
+</div>
+<div class="row" ng-controller="TestsController">
+    <div class="col l24" ng-init="recent_tests=[
+        'Programming in Pascal',
+        'Programming in C',
+        'Programming in C++']">
+        <div class="card-panel waves-effect waves-orange blue-grey darken-2 grey-text text-lighten-1 hoverable animated fadeInDown"
+             style="-webkit-animation-delay: .{{$index}}s"
+             ng-repeat="test in recent_tests">
+            <div class="row">
+                <div class="col l21">
+                    <span class="truncate">{{test}}</span>
+                </div>
+                <div class="col l3">
+                    <i class="fa fa-chevron-right yellow-text text-darken-2"></i>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="recent-test-details section blue-grey-text text-lighten-4">
+            <span><b>Subject: </b><i>Programming in Pascal</i></span><br>
+            <span><b>Year: </b><i>2015/2016</i></span><br>
+            <span><b>Score: </b><i>25/40</i></span><br>
+            <span><b>Date: </b><i>Jun 24, 2016</i></span>
+        </div>
+    </div>
+</div>

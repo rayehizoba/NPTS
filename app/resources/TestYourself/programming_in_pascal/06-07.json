@@ -1,0 +1,47 @@
+[
+    {
+        "question" :
+"Use the following program to answer questions 1 to 3 <br><br> <code>1. Procedure CSC211_exam(var S: String; m, n:integer);<br>2. &nbsp;&nbsp;var c: char<br>3. begin<br>4. &nbsp;&nbsp;if m&lt;n then begin<br>5. &nbsp;&nbsp;&nbsp;&nbsp;c:= s[m]; s[m] :=s[n]; s[n] :=c;<br>6. &nbsp;&nbsp;&nbsp;&nbsp;csc211_exam(s, m+1, n-1)<br>7. &nbsp;&nbsp;end<br>8. end</code><br><br>Which of the following lines contain one or more errors?",
+        "options": {
+            "a": "6, 7. 8",
+            "b": "1, 6, 8",
+            "c": "8",
+            "d": "5",
+            "e": "none of the above"
+        },
+        "correct_option": "a"
+    },
+    {
+        "question": "Use the following program to answer questions 1 to 3 <br><br> <code>1. Procedure CSC211_exam(var S: String; m, n:integer);<br>2. &nbsp;&nbsp;var c: char<br>3. begin<br>4. &nbsp;&nbsp;if m&lt;n then begin<br>5. &nbsp;&nbsp;&nbsp;&nbsp;c:= s[m]; s[m] :=s[n]; s[n] :=c;<br>6. &nbsp;&nbsp;&nbsp;&nbsp;csc211_exam(s, m+1, n-1)<br>7. &nbsp;&nbsp;end<br>8. end</code><br><br>CSC211_exam is an example of _____________ procedure",
+        "options": {
+            "a": "recursive",
+            "b": "transformation",
+            "c": "iterative",
+            "d": "blocked",
+            "e": "none of the above"
+        },
+        "correct_option": "a"
+    },
+    {
+        "question": "Use the following program to answer questions 1 to 3 <br><br> <code>1. Procedure CSC211_exam(var S: String; m, n:integer);<br>2. &nbsp;&nbsp;var c: char<br>3. begin<br>4. &nbsp;&nbsp;if m&lt;n then begin<br>5. &nbsp;&nbsp;&nbsp;&nbsp;c:= s[m]; s[m] :=s[n]; s[n] :=c;<br>6. &nbsp;&nbsp;&nbsp;&nbsp;csc211_exam(s, m+1, n-1)<br>7. &nbsp;&nbsp;end<br>8. end</code><br><br>Given s to be <pre>\"Ename\"</pre> what will be s if called in the main program?",
+        "options": {
+            "a": "string",
+            "b": "literal",
+            "c": "Emane",
+            "d": "emanE",
+            "e": "Ecane"
+        },
+        "correct_option": "a"
+    },
+    {
+        "question": "Lorem ipsum dolor sit amet, distinctio eaque incidunt, laboriosam, sit tempora?",
+        "options": {
+            "a": "Lum.",
+            "b": "Lo dlor.",
+            "c": "Lorem.",
+            "d": "Lore door.",
+            "e": "Lorem ipsum."
+        },
+        "correct_option": "a"
+    }
+]
