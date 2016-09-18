@@ -5,6 +5,7 @@
 !app
 !package.json
 !.gitignore
+!README.md
 
 # oh, yeah. Please ignore these subdirectories and video files
 app/bin/*
