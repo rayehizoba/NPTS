@@ -7,5 +7,5 @@
 !.gitignore
 
 # oh, yeah. Please ignore these subdirectories
-app/bin
-app/resources/Tutorials/videos
+app/bin/*
+app/resources/Tutorials/videos/*
